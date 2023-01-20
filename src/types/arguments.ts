@@ -1,4 +1,6 @@
 export interface Arguments {
   message?: string
-  config?: string
+  config?: boolean
+  path?: boolean
+  model?: boolean
 }

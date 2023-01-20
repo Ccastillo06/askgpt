@@ -1,9 +1,10 @@
 import { red } from 'colorette'
 import { Configuration, OpenAIApi } from 'openai'
+import { Models } from '../constants'
 import { readConfigFile } from './file'
 
 export const askGpt = async (message: string) => {
-  const { apiKey } = await readConfigFile()
+  const { apiKey, model, tokens } = await readConfigFile()
 
   if (!apiKey) throw new Error('API key not defined. Use --config command to set it up')
 
@@ -15,10 +16,10 @@ export const askGpt = async (message: string) => {
 
   try {
     const response = await openai.createCompletion({
-      model: 'text-davinci-003',
+      model: model as Models,
+      max_tokens: tokens as number,
       prompt: message,
       temperature: 0.9,
-      max_tokens: 500,
       top_p: 1,
       frequency_penalty: 0.0,
       presence_penalty: 0.6,

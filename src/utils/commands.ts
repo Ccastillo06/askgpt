@@ -14,6 +14,16 @@ export const getArgs = async (): Promise<Arguments> => {
       description: 'Run configuration setup',
       type: 'boolean'
     })
+    .option('path', {
+      alias: 'p',
+      description: 'Shows the path where your config file is saved',
+      type: 'boolean'
+    })
+    .option('model', {
+      alias: 'd',
+      description: 'Shows the current model being used by OpenAI API',
+      type: 'boolean'
+    })
 
   return argv as Arguments
 }

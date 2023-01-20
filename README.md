@@ -2,6 +2,8 @@
 
 This library gives your **Terminal superpowers by connecting it with OpenAI API directly**. It allows you to use a simple command to have a pretty similar response to what you can get with [ChatGPT](https://chat.openai.com/).
 
+**NPM package:** https://www.npmjs.com/package/askgpt
+
 ## Installation
 
 This library should be installed globally with your preferred package manager:
@@ -36,6 +38,21 @@ askgpt -m "how can I commit my files using Git?"
 
 And you will receive an output with the answer from OpenAI and an approximate cost of your request (you may be in the free test tier for now so take care about reaching the credit limit!).
 
+## Available flags
+
+We configured some flags to allow you to configure the project easily and get information about current config status. Use any of these flags along with `askgpt` command to access different functionalities:
+
+| Shortcut | Flag name |                                    Description |                Example |
+| -------- | :-------: | ---------------------------------------------: | ---------------------: |
+|          |  --help   |   Show all available commands in your terminal |          askgpt --help |
+|          | --version |                   Show current package version |       askgpt --version |
+| -c       | --config  |                        Run configuration setup |              askgpt -c |
+| -p       |  --path   | Shows the path where your config file is saved |              askgpt -p |
+| -d       |  --model  |            Shows current data model being used |              askgpt -d |
+| -m       | --message |                  Message to send to OpenAI API | askgpt -m "Say hello!" |
+
+## Example
+
 **Output example:**
 
 ```bash
@@ -52,4 +69,4 @@ Used a total of 90 tokens with an approximate cost of $0.0018
 
 **And in a screenshot too if you want a visual on what it looks like:**
 
-<img src="https://github.com/Ccastillo06/askgpt/blob/main/askgpt-sample.PNG.png" alt="example" width="500" />
+<img src="https://raw.githubusercontent.com/Ccastillo06/askgpt/main/askgpt-sample.PNG.png" alt="example" width="500" />

@@ -1,3 +1,5 @@
 export interface Config {
-  apiKey?: string
+  apiKey?: string | null
+  tokens?: number
+  model?: string
 }

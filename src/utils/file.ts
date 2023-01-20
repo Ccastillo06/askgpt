@@ -4,7 +4,7 @@ import type { Config } from '../types/config'
 import { mergeTruthyObjectValues } from './objects'
 import { getDataPath } from './ospath'
 
-const getConfigFilePath = () => {
+export const getConfigFilePath = () => {
   const pathToSave = getDataPath()
   return `${pathToSave}/.askgtpconfig`
 }
