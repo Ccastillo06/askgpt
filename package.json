@@ -1,0 +1,68 @@
+{
+  "name": "askgpt",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "askGTP package will allow you to use OpenAI chat capabilities in your terminal",
+  "keywords": [
+    "CLI",
+    "javascript",
+    "typescript",
+    "openai",
+    "GPT"
+  ],
+  "homepage": "",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/<REPO_PATH>"
+  },
+  "bugs": {
+    "url": "https://github.com/<REPO_PATH>/issues",
+    "email": ""
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./dist && rollup -c",
+    "start": "npm run build && node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier:format": "prettier --config .prettierrc src/**/*.ts --write"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Cristian Castillo",
+    "email": "cristiancastillodev@gmail.com",
+    "url": "https://www.linkedin.com/in/cristiancastillonavarro/"
+  },
+  "peerDependencies": {
+    "colorette": "^2.0.19",
+    "inquirer": "^9.1.4",
+    "openai": "^3.1.0",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.11.9",
+    "@types/yargs": "^17.0.20",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "esbuild": "^0.17.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "bin": {
+    "askgpt": "index.js"
+  }
+}
