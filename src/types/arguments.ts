@@ -3,4 +3,8 @@ export interface Arguments {
   config?: boolean
   path?: boolean
   model?: boolean
+  tokens?: number
+  save?: boolean
+  history?: boolean
+  remove?: boolean
 }
