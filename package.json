@@ -1,6 +1,6 @@
 {
   "name": "askgpt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "askGTP package will allow you to use OpenAI chat capabilities in your terminal",
   "keywords": [
@@ -10,7 +10,7 @@
     "openai",
     "GPT"
   ],
-  "homepage": "",
+  "homepage": "https://www.npmjs.com/package/askgpt",
   "repository": {
     "type": "github",
     "url": "https://github.com/Ccastillo06/askgpt"

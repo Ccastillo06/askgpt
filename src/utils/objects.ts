@@ -3,7 +3,6 @@ import type { Config } from '../types/config'
 
 const defaultConfigValues: Config = {
   apiKey: null,
-  configPath: null,
   tokens: 500,
   model: Models.DAVINCI
 }
