@@ -1,6 +1,6 @@
 {
   "name": "askgpt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "askGTP package will allow you to use OpenAI chat capabilities in your terminal",
   "keywords": [
