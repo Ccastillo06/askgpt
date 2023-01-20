@@ -24,6 +24,26 @@ export const getArgs = async (): Promise<Arguments> => {
       description: 'Shows the current model being used by OpenAI API',
       type: 'boolean'
     })
+    .option('tokens', {
+      alias: 't',
+      description: 'Number of max. tokens you want for this request only',
+      type: 'number'
+    })
+    .option('save', {
+      alias: 's',
+      description: 'Saves the current request payload to a JSON file',
+      type: 'boolean'
+    })
+    .option('history', {
+      alias: 'h',
+      description: 'Lists all saved files and READS one of them',
+      type: 'boolean'
+    })
+    .option('remove', {
+      alias: 'r',
+      description: 'List all saved files and DELETES the one chosen',
+      type: 'boolean'
+    })
 
   return argv as Arguments
 }

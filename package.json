@@ -1,6 +1,6 @@
 {
   "name": "askgpt",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "type": "module",
   "description": "askGTP package will allow you to use OpenAI chat capabilities in your terminal",
   "keywords": [
@@ -25,7 +25,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./dist && rollup -c",
+    "build": "tsc && rimraf ./dist && rollup -c",
     "start": "npm run build && node dist/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "npm run lint -- --fix",

@@ -28,8 +28,6 @@ askgpt --config
 
 In this version of the library we support `completion` using `text-davinci-003` data model. It's more than enough for precise answers and helping with code.
 
-> The next and soon to come version will allow you to change the model of preference and many more options! 🎊
-
 To use the API directly from your terminal, run this command:
 
 ```bash
@@ -42,14 +40,18 @@ And you will receive an output with the answer from OpenAI and an approximate co
 
 We configured some flags to allow you to configure the project easily and get information about current config status. Use any of these flags along with `askgpt` command to access different functionalities:
 
-| Shortcut | Flag name |                                    Description |                Example |
-| -------- | :-------: | ---------------------------------------------: | ---------------------: |
-|          |  --help   |   Show all available commands in your terminal |          askgpt --help |
-|          | --version |                   Show current package version |       askgpt --version |
-| -c       | --config  |                        Run configuration setup |              askgpt -c |
-| -p       |  --path   | Shows the path where your config file is saved |              askgpt -p |
-| -d       |  --model  |            Shows current data model being used |              askgpt -d |
-| -m       | --message |                  Message to send to OpenAI API | askgpt -m "Say hello!" |
+| Shortcut | Flag name |                                          Description |                      Example |
+| -------- | :-------: | ---------------------------------------------------: | ---------------------------: |
+|          |  --help   |         Show all available commands in your terminal |                askgpt --help |
+|          | --version |                         Show current package version |             askgpt --version |
+| -c       | --config  |                              Run configuration setup |                    askgpt -c |
+| -p       |  --path   |       Shows the path where your config file is saved |                    askgpt -p |
+| -d       |  --model  |                  Shows current data model being used |                    askgpt -d |
+| -h       | --history |          Lists all saved files and READS one of them |                    askgpt -h |
+| -r       | --remove  |      List all saved files and DELETES the one chosen |                    askgpt -r |
+| -m       | --message |                        Message to send to OpenAI API |       askgpt -m "Say hello!" |
+| -t       | --tokens  | Number of max. tokens you want for this request only | askgpt -m "Say hello!" -t 10 |
+| -s       |  --save   |     Saves the current request payload to a JSON file |    askgpt -m "Say hello!" -s |
 
 ## Example
 

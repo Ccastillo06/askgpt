@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from 'openai'
 import { Models } from '../constants'
 import { readConfigFile } from './file'
 
-export const askGpt = async (message: string) => {
+export const askGpt = async (message: string, maxTokens?: number) => {
   const { apiKey, model, tokens } = await readConfigFile()
 
   if (!apiKey) throw new Error('API key not defined. Use --config command to set it up')
@@ -17,7 +17,7 @@ export const askGpt = async (message: string) => {
   try {
     const response = await openai.createCompletion({
       model: model as Models,
-      max_tokens: tokens as number,
+      max_tokens: (maxTokens ?? tokens) as number,
       prompt: message,
       temperature: 0.9,
       top_p: 1,
