@@ -6,7 +6,7 @@ import { getDataPath } from './ospath'
 
 export const getConfigFilePath = () => {
   const pathToSave = getDataPath()
-  return `${pathToSave}/.askgtpconfig`
+  return `${pathToSave}/.askgptconfig`
 }
 
 export const readConfigFile = async (hideWarning = false): Promise<Config> => {
