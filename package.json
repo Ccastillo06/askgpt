@@ -13,11 +13,11 @@
   "homepage": "",
   "repository": {
     "type": "github",
-    "url": "https://github.com/<REPO_PATH>"
+    "url": "https://github.com/Ccastillo06/askgpt"
   },
   "bugs": {
-    "url": "https://github.com/<REPO_PATH>/issues",
-    "email": ""
+    "url": "https://github.com/Ccastillo06/askgpt/issues",
+    "email": "cristiancastillodev@gmail.com"
   },
   "files": [
     "index.js",
