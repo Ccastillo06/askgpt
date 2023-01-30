@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["./telegram-bot/**/*.ts"],
+  "compilerOptions": {
+    "outDir": "tgbot-dist"
+  }
+}
