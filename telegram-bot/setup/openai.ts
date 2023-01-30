@@ -26,6 +26,5 @@ export const askGpt = async (message: string, maxTokens?: number) => {
     }
   } catch (err: any) {
     console.error(err.response?.data || err.message)
-    process.exit(1)
   }
 }

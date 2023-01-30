@@ -7,3 +7,6 @@ tgbot-dist/
 node_modules
 .env
 .env.local
+Dockerfile
+.dockerignore
+*.toml

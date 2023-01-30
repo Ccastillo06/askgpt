@@ -79,4 +79,4 @@ Used a total of 90 tokens with an approximate cost of $0.0018
 
 **And in a screenshot too if you want a visual on what it looks like:**
 
-<img src="https://raw.githubusercontent.com/Ccastillo06/askgpt/main/askgpt-sample.PNG.png" alt="example" width="500" />
+<img src="https://raw.githubusercontent.com/Ccastillo06/askgpt/main/assets/askgpt-sample.png" alt="example" width="500" />
