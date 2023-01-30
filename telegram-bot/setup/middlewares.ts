@@ -17,3 +17,9 @@ export const stopCommands = async (message: string) => {
     throw new Error('Commands not supported')
   }
 }
+
+export const sendBotMessage = async (bot: TelegramBot, chatId: number, message: string) => {
+  await bot.sendMessage(chatId, message, {
+    parse_mode: 'Markdown'
+  })
+}

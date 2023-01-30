@@ -1,7 +1,13 @@
 import { Configuration, OpenAIApi } from 'openai'
+import type { CreateCompletionResponseUsage } from 'openai'
 import { MAX_TOKENS_PER_REQUEST, OPEN_AI_API_TOKEN } from './config'
 
-export const askGpt = async (message: string, maxTokens?: number) => {
+export interface AskGPTResponse {
+  message: string
+  usage?: CreateCompletionResponseUsage
+}
+
+export const askGpt = async (message: string) => {
   const configuration = new Configuration({
     apiKey: OPEN_AI_API_TOKEN
   })
@@ -21,7 +27,7 @@ export const askGpt = async (message: string, maxTokens?: number) => {
     })
 
     return {
-      message: response.data.choices[0].text?.trim(),
+      message: (response.data.choices[0].text ?? '')?.trim(),
       usage: response.data.usage
     }
   } catch (err: any) {
