@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.ts", "./telegram-bot/**/*.ts"],
   "exclude": ["./node_modules", "./rollup.config.js"],
   "types": ["node"]
 }

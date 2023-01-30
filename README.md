@@ -4,6 +4,14 @@ This library gives your **Terminal superpowers by connecting it with OpenAI API 
 
 **NPM package:** https://www.npmjs.com/package/askgpt
 
+---
+
+## Want to have it running in Telegram?
+
+Read the [docs](https://github.com/Ccastillo06/askgpt/telegram-bot) and learn how to deploy your server in minutes! 
+
+---
+
 ## Installation
 
 This library should be installed globally with your preferred package manager:
