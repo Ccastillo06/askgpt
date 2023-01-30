@@ -8,7 +8,7 @@ This library gives your **Terminal superpowers by connecting it with OpenAI API 
 
 ## Want to have it running in Telegram?
 
-Read the [docs](https://github.com/Ccastillo06/askgpt/telegram-bot) and learn how to deploy your server in minutes! 
+Read the [docs](https://github.com/Ccastillo06/askgpt/tree/main/telegram-bot) and learn how to deploy your server in minutes! 
 
 ---
 

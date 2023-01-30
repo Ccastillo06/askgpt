@@ -6,7 +6,7 @@ Using some of the code created for `askgpt` when launching the CLI, I prepared a
 
 > Disclaimer: Telegram bots can't be private yet but this bot is **just allowing your own Telegram id to ask questions**, any other user id will get declined and wont waste more resources than a simple answer to redirect them to this README 🚔.
 
-<img src="https://raw.githubusercontent.com/Ccastillo06/askgpt/main/assets/telegram-bot.gif" alt="example" width="500" />
+<img src="https://raw.githubusercontent.com/Ccastillo06/askgpt/main/assets/telegram-bot.gif" alt="example" />
 
 ## Preparing the bot server locally 👾
 
