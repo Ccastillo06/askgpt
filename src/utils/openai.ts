@@ -19,11 +19,7 @@ export const askGpt = async (message: string, maxTokens?: number) => {
       model: model as Models,
       max_tokens: (maxTokens ?? tokens) as number,
       prompt: message,
-      temperature: 0.9,
-      top_p: 1,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.6,
-      stop: '4'
+      temperature: 0.5
     })
 
     return {

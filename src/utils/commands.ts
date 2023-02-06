@@ -6,8 +6,8 @@ export const getArgs = async (): Promise<Arguments> => {
   const { argv } = await yargs(hideBin(process.argv))
     .option('message', {
       alias: 'm',
-      description: 'Message to send to OpenAI API',
-      type: 'string'
+      description: 'Send a message OpenAI API',
+      type: 'boolean'
     })
     .option('config', {
       alias: 'c',
