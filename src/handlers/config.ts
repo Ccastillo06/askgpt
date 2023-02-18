@@ -17,13 +17,13 @@ const configHandler = async () => {
     },
     {
       message:
-        'How many tokens you want as a limit? More info here https://openai.com/api/pricing/',
+        'Daily budget spend on tokens for AskGPT? See https://openai.com/api/pricing/ for more info',
       type: 'number',
       name: 'tokens'
     },
     {
       message:
-        'Which model do you want to use? (Davinci is the most powerful but costs more, Ada is the fastest and cheapest model but is not as powerful). More info here https://beta.openai.com/docs/models/overview',
+        'Which model do you want to use? (Davinci is the most powerful but costs more, Ada is the fastest and cheapest model but is not as powerful). More info here https://platform.openai.com/docs/models/overview',
       type: 'list',
       name: 'model',
       choices: [
