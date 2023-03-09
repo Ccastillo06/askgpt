@@ -10,7 +10,7 @@ import {
 import { readConfigFile } from './file'
 
 export const askGpt = async (message: string, maxTokens?: number) => {
-  const { apiKey, model, tokens } = await readConfigFile()
+  const { apiKey, model = Models.CHATGPT, tokens } = await readConfigFile()
 
   if (!apiKey) throw new Error('API key not defined. Use --config command to set it up')
 
@@ -22,7 +22,7 @@ export const askGpt = async (message: string, maxTokens?: number) => {
 
   try {
     const response = await openai.createChatCompletion({
-      model: model as Models,
+      model,
       max_tokens: ((maxTokens ?? tokens) as number) - TOKENS_IN_INITIAL_MESSAGE,
       messages: [
         {

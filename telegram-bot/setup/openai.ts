@@ -7,7 +7,7 @@ import {
   Models,
   TOKENS_IN_INITIAL_MESSAGE,
   USER_QUESTION
-} from '../../src/constants'
+} from './messages'
 
 export interface AskGPTResponse {
   message: string

@@ -4,7 +4,7 @@ import type { Config } from '../types/config'
 const defaultConfigValues: Config = {
   apiKey: null,
   tokens: 500,
-  model: Models.DAVINCI
+  model: Models.CHATGPT
 }
 
 export const mergeTruthyObjectValues = <T extends object>(obj1: T, obj2: T): T => {
