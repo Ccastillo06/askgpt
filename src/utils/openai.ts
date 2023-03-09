@@ -1,6 +1,6 @@
-import { red } from 'colorette'
+import { blue, red } from 'colorette'
 import { Configuration, OpenAIApi } from 'openai'
-import { Models } from '../constants'
+import { ASSITANT_ANSWER, FULL_ASSISTANT_MESSAGE, Models, USER_QUESTION } from '../constants'
 import { readConfigFile } from './file'
 
 export const askGpt = async (message: string, maxTokens?: number) => {
@@ -15,15 +15,33 @@ export const askGpt = async (message: string, maxTokens?: number) => {
   const openai = new OpenAIApi(configuration)
 
   try {
-    const response = await openai.createCompletion({
+    const response = await openai.createChatCompletion({
       model: model as Models,
       max_tokens: (maxTokens ?? tokens) as number,
-      prompt: message,
+      messages: [
+        {
+          role: 'system',
+          content: FULL_ASSISTANT_MESSAGE
+        },
+        {
+          role: 'user',
+          content: USER_QUESTION
+        },
+        {
+          role: 'assistant',
+          content: ASSITANT_ANSWER
+        },
+        { role: 'user', content: message }
+      ],
       temperature: 0.5
     })
 
+    console.log(blue('All answers obtained:'))
+    const choices = response.data.choices.map(({ message }) => message?.content.trim())
+    choices.forEach((choice) => console.log(`> ${choice}`))
+
     return {
-      message: response.data.choices[0].text?.trim(),
+      message: choices[0],
       usage: response.data.usage
     }
   } catch (err: any) {

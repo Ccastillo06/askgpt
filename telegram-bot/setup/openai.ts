@@ -1,6 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai'
 import type { CreateCompletionResponseUsage } from 'openai'
 import { MAX_TOKENS_PER_REQUEST, OPEN_AI_API_TOKEN } from './config'
+import { ASSITANT_ANSWER, FULL_ASSISTANT_MESSAGE, Models, USER_QUESTION } from '../../src/constants'
 
 export interface AskGPTResponse {
   message: string
@@ -15,19 +16,29 @@ export const askGpt = async (message: string) => {
   const openai = new OpenAIApi(configuration)
 
   try {
-    const response = await openai.createCompletion({
-      model: 'text-davinci-003',
+    const response = await openai.createChatCompletion({
+      model: Models.CHATGPT,
       max_tokens: MAX_TOKENS_PER_REQUEST,
-      prompt: message,
-      temperature: 0.9,
-      top_p: 1,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.6,
-      stop: '4'
+      messages: [
+        {
+          role: 'system',
+          content: FULL_ASSISTANT_MESSAGE
+        },
+        {
+          role: 'user',
+          content: USER_QUESTION
+        },
+        {
+          role: 'assistant',
+          content: ASSITANT_ANSWER
+        },
+        { role: 'user', content: message }
+      ],
+      temperature: 0.5
     })
 
     return {
-      message: (response.data.choices[0].text ?? '')?.trim(),
+      message: (response.data.choices[0].message?.content ?? 'No answer provided by API')?.trim(),
       usage: response.data.usage
     }
   } catch (err: any) {
