@@ -1,6 +1,12 @@
 import { red } from 'colorette'
 import { Configuration, OpenAIApi } from 'openai'
-import { Models } from '../constants'
+import {
+  ASSITANT_ANSWER,
+  FULL_ASSISTANT_MESSAGE,
+  Models,
+  TOKENS_IN_INITIAL_MESSAGE,
+  USER_QUESTION
+} from '../constants'
 import { readConfigFile } from './file'
 
 export const askGpt = async (message: string, maxTokens?: number) => {
@@ -15,15 +21,29 @@ export const askGpt = async (message: string, maxTokens?: number) => {
   const openai = new OpenAIApi(configuration)
 
   try {
-    const response = await openai.createCompletion({
+    const response = await openai.createChatCompletion({
       model: model as Models,
-      max_tokens: (maxTokens ?? tokens) as number,
-      prompt: message,
+      max_tokens: ((maxTokens ?? tokens) as number) - TOKENS_IN_INITIAL_MESSAGE,
+      messages: [
+        {
+          role: 'system',
+          content: FULL_ASSISTANT_MESSAGE
+        },
+        {
+          role: 'user',
+          content: USER_QUESTION
+        },
+        {
+          role: 'assistant',
+          content: ASSITANT_ANSWER
+        },
+        { role: 'user', content: message }
+      ],
       temperature: 0.5
     })
 
     return {
-      message: response.data.choices[0].text?.trim(),
+      message: response.data.choices[0]?.message?.content.trim(),
       usage: response.data.usage
     }
   } catch (err: any) {
