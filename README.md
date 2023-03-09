@@ -34,7 +34,7 @@ askgpt --config
 
 ## Using OpenAI API
 
-In this version of the library we support `completion` using `text-davinci-003` data model. It's more than enough for precise answers and helping with code.
+In this version of the library we support `chatCompletion` using `gpt-3.5-turbo` data model. It's more than enough for precise answers and helping with code.
 
 To use the API directly from your terminal, run this command:
 

@@ -1,7 +1,13 @@
 import { Configuration, OpenAIApi } from 'openai'
 import type { CreateCompletionResponseUsage } from 'openai'
 import { MAX_TOKENS_PER_REQUEST, OPEN_AI_API_TOKEN } from './config'
-import { ASSITANT_ANSWER, FULL_ASSISTANT_MESSAGE, Models, USER_QUESTION } from '../../src/constants'
+import {
+  ASSITANT_ANSWER,
+  FULL_ASSISTANT_MESSAGE,
+  Models,
+  TOKENS_IN_INITIAL_MESSAGE,
+  USER_QUESTION
+} from '../../src/constants'
 
 export interface AskGPTResponse {
   message: string
@@ -18,7 +24,7 @@ export const askGpt = async (message: string) => {
   try {
     const response = await openai.createChatCompletion({
       model: Models.CHATGPT,
-      max_tokens: MAX_TOKENS_PER_REQUEST,
+      max_tokens: MAX_TOKENS_PER_REQUEST - TOKENS_IN_INITIAL_MESSAGE,
       messages: [
         {
           role: 'system',

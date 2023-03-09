@@ -17,3 +17,7 @@ export const FULL_ASSISTANT_MESSAGE = `${ASSISTANT_MESSAGES.helpful} ${ASSISTANT
 
 export const USER_QUESTION = 'Will you answer all my questions?'
 export const ASSITANT_ANSWER = 'Yes, I will answer all your questions. What do you want to know?'
+
+export const TOKENS_IN_INITIAL_MESSAGE = Math.ceil(
+  (FULL_ASSISTANT_MESSAGE.length + USER_QUESTION.length + ASSITANT_ANSWER.length) / 4
+)
